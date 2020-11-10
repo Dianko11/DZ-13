@@ -1,0 +1,266 @@
+/* Обертка которая обрезает все лишнее что выходит за ширину страници,
+к примеру если вы что то вытаскиваете марджинами то у вас появится горизонтальный скролл на странице, эта обертка его срезает
++ если вы забыли указать position: relative; на нужном блоке, это ваша отправная точка для позиционирования,
+чтобы не трогать body
+эта обертка есть в каждом проекте */
+
+.wrapper {
+	overflow: hidden;
+	position: relative;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak-as: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-facebook:before {
+  content: "\ea90";
+}
+.icon-twitter:before {
+  content: "\ea96";
+}
+.icon-linkedin:before {
+  content: "\eaca";
+}
+
+/* Элемент который центрирует контент на странице (только центрирует) */
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 20px ;
+}
+
+.first-carousel {
+  margin-bottom: 20px;
+}
+
+.first-carousel img {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.slick-arrow {
+  position: absolute;
+  top: 50%;
+  font-size: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #fff;
+  opacity: 0.8;
+  z-index: 1;
+  margin: 0 10px;
+  transition: background-color .3s;
+  border: none;
+}
+ 
+.slick-prev {
+  left: 0;
+}
+
+.slick-prev:hover {
+  background-color: rgb(133, 122, 122);
+}
+
+.slick-prev::before {
+  font-size: 20px;
+  content: '<';
+  font-weight: bold;
+}
+
+.slick-next {
+  right: 0;
+}
+
+.slick-next:hover {
+  background-color: rgb(133, 122, 122);
+}
+
+.slick-next::before {
+  font-size: 20px;
+  content: '>';
+  font-weight: bold;
+}
+
+.first-carousel .slick-dots {
+  position: absolute;
+  bottom: 0;
+  left: calc((100% - 150px) / 2);
+  z-index: 1;
+  padding: 0;
+}
+
+.slick-dots li button {
+  font-size: 0;
+  margin: 10px;
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  border-radius: 50%;
+  opacity: 0.6;
+  transition: background-color .3s;
+  border: none;
+}
+
+.slick-dots li button:hover {
+  background-color: rgb(133, 122, 122);
+  
+}
+
+.slick-dots li {
+  display: inline-block;
+}
+
+
+.second-carousel .slick-list .slick-track { 
+  display: flex;
+  justify-content: space-between;
+}
+
+.second-carousel img {
+  width: 100%;
+}
+
+.card {
+  margin: 0 10px;
+  position: relative;
+  background-color: #e1e6ea;
+}
+
+.second-carousel {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.second-carousel .slick-dots {
+display: flex;
+justify-content: center;
+position: relative;
+padding: 0;
+}
+
+.second-carousel .slick-dots button {
+  background-color: grey;
+  transition: background-color .3s;
+}
+
+.second-carousel .slick-dots button:hover {
+  background-color: rgb(83, 76, 76);
+}
+
+.card h3 {
+  color: #292f36;
+  margin: 0;
+}
+
+.card p {
+  color: #8d8f92;
+  margin: 0;
+  padding-bottom: 15px;
+}
+
+.hover-box {
+  background-color: rgb(0, 0, 0, .5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 74px);
+  display: flex;
+  flex-direction: column;
+  transition: opacity .5s ease-in-out;
+  z-index: 1;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+}
+
+.social-networks {
+  padding: 0;
+}
+
+.social-networks li {
+ display: inline-block;
+}
+
+.social-networks li a {
+  background-color: #3a454d;
+  color: #fff;
+  text-decoration: none;
+  padding: 15px;
+}
+
+.social-networks li a:hover {
+  background-color: #4e5a62;
+}
+
+.card:hover .hover-box {
+  opacity: 1;
+}
+
+.caption {
+  height: 74px;
+  padding-left: 20px;
+}
+
+.card:hover .caption {
+  background-color: #3a454d;
+}
+
+.card:hover h3 {
+  color: #fff;
+} 
+
+.card:hover p {
+  color: #fff;
+} 
+
+/* Обертка для полей формы */
+
+.form-group {
+	margin-bottom: 15px;
+}
+
+/* Поля формы */
+
+.form-control {
+	display: block;
+	width: 100%;
+	padding: 10px 15px;
+	border-color: green;
+	border-radius: 3px;
+	color: #000;
+}
+
+.form-control:focus {
+	outline: none;
+	border-color: #ff0;
+}
+
+/* Стили для кроссбраузерности placeholder полей */
+
+.form-control::-webkit-input-placeholder {
+	color: #f00;
+}
+
+.form-control::-moz-placeholder {
+	opacity: 1;
+	color: #f00;
+}
+
+.form-control:-ms-input-placeholder {
+	color: #f00;
+}
